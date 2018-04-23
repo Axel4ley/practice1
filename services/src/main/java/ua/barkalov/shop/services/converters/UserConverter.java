@@ -1,4 +1,4 @@
-package ua.barkalov.shop.services.convertors;
+package ua.barkalov.shop.services.converters;
 
 import ua.barkalov.shop.dao.model.User;
 import ua.barkalov.shop.services.dto.UserDto;

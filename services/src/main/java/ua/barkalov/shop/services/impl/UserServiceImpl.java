@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import ua.barkalov.shop.dao.model.User;
 import ua.barkalov.shop.dao.repository.UserDao;
 import ua.barkalov.shop.services.UserService;
-import ua.barkalov.shop.services.convertors.UserConverter;
+import ua.barkalov.shop.services.converters.UserConverter;
 import ua.barkalov.shop.services.dto.UserDto;
 
 import java.util.ArrayList;
