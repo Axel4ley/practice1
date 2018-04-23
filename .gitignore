@@ -2,5 +2,5 @@
 /target/
 *.idea
 *.iml
-/.idea/*
-/target/*
+.idea/*
+target/*
