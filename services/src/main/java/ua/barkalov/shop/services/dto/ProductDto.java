@@ -3,7 +3,7 @@ package ua.barkalov.shop.services.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ua.barkalov.shop.dao.model.Product;
+import ua.barkalov.shop.DAO.model.Product;
 
 import java.math.BigDecimal;
 

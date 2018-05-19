@@ -1,7 +1,7 @@
 package ua.barkalov.shop.services.converters.impl;
 
 import org.springframework.stereotype.Component;
-import ua.barkalov.shop.dao.model.User;
+import ua.barkalov.shop.DAO.model.User;
 import ua.barkalov.shop.services.converters.UserConverter;
 import ua.barkalov.shop.services.dto.UserDto;
 

@@ -2,8 +2,9 @@ package ua.barkalov.shop.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ua.barkalov.shop.dao.model.User;
-import ua.barkalov.shop.dao.repository.UserDao;
+import org.springframework.transaction.annotation.Transactional;
+import ua.barkalov.shop.DAO.model.User;
+import ua.barkalov.shop.DAO.repository.UserDao;
 import ua.barkalov.shop.services.UserService;
 import ua.barkalov.shop.services.converters.UserConverter;
 import ua.barkalov.shop.services.dto.UserDto;
@@ -23,11 +24,13 @@ public class UserServiceImpl implements UserService {
         this.userConverter = userConverter;
     }
 
+    @Transactional
     public void create(UserDto user) {
         User userEntity = userConverter.toEntity(user);
         userDao.create(userEntity);
     }
 
+    @Transactional(readOnly = true)
     public List<UserDto> findAll() {
         List<User> users = userDao.findAll();
 

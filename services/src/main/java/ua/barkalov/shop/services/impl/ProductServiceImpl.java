@@ -2,8 +2,8 @@ package ua.barkalov.shop.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ua.barkalov.shop.dao.model.Product;
-import ua.barkalov.shop.dao.repository.ProductDao;
+import ua.barkalov.shop.DAO.model.Product;
+import ua.barkalov.shop.DAO.repository.ProductDao;
 import ua.barkalov.shop.services.ProductService;
 import ua.barkalov.shop.services.converters.ProductConverter;
 import ua.barkalov.shop.services.dto.ProductDto;

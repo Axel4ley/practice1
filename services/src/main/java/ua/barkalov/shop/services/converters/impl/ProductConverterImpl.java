@@ -1,7 +1,7 @@
 package ua.barkalov.shop.services.converters.impl;
 
 import org.springframework.stereotype.Component;
-import ua.barkalov.shop.dao.model.Product;
+import ua.barkalov.shop.DAO.model.Product;
 import ua.barkalov.shop.services.converters.ProductConverter;
 import ua.barkalov.shop.services.dto.ProductDto;
 

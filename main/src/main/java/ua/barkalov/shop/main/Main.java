@@ -2,8 +2,7 @@ package ua.barkalov.shop.main;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
-import ua.barkalov.shop.dao.model.Product;
-import ua.barkalov.shop.dao.repository.impl.UserDaoImpl;
+import ua.barkalov.shop.DAO.model.Product;
 import ua.barkalov.shop.services.ProductService;
 import ua.barkalov.shop.services.UserService;
 import ua.barkalov.shop.services.dto.ProductDto;
