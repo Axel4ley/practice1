@@ -5,10 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ua.barkalov.shop.DAO.model.User;
 import ua.barkalov.shop.DAO.repository.UserDao;
 
-import javax.persistence.Entity;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -35,7 +32,10 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void delete(Long id) {
-        entityManager.remove(id);
+
+        Query query = entityManager.createQuery("DELETE FROM User u WHERE u.id = :id");
+        query.setParameter("id", id);
+        query.executeUpdate();
     }
 
     @Override
