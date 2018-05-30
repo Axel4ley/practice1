@@ -7,5 +7,8 @@ import java.util.List;
 public interface ProductDao {
 
     void create(Product product);
+    Product get(Long id);
     List<Product> getAll();
+    void delete(Long id);
+    void update(Long id, Product product);
 }

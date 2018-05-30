@@ -21,8 +21,26 @@ public class ProductDaoImpl implements ProductDao {
         products.put(product.getId(), product);
     }
 
+    //
+    @Override
+    public Product get(Long id) {
+        return products.get(id);
+    }
+
     public List<Product> getAll(){
         return new ArrayList<>(products.values());
+    }
+
+    //
+    @Override
+    public void delete(Long id) {
+        products.remove(id);
+    }
+
+    //
+    @Override
+    public void update(Long id, Product product) {
+        products.put(id, product);
     }
 
 }

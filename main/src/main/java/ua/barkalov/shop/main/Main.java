@@ -22,6 +22,8 @@ public class Main {
         ProductService productService = context.getBean(ProductService.class);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
+
+
         while (true) {
             String input = reader.readLine();
             String[] arguments = input.split(" ");
