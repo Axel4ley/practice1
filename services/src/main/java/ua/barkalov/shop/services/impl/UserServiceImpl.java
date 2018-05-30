@@ -30,6 +30,7 @@ public class UserServiceImpl implements UserService {
         userDao.create(userEntity);
     }
 
+
     //    smth like this, I guess so
     @Override
     public void delete(Long id) {
@@ -51,7 +52,6 @@ public class UserServiceImpl implements UserService {
     @Transactional(readOnly = true)
     public List<UserDto> findAll() {
         List<User> users = userDao.findAll();
-
         List<UserDto> userDtos = new ArrayList<>();
 
         for (User user : users) {

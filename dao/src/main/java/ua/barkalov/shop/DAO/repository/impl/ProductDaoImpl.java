@@ -42,5 +42,4 @@ public class ProductDaoImpl implements ProductDao {
     public void update(Long id, Product product) {
         products.put(id, product);
     }
-
 }
