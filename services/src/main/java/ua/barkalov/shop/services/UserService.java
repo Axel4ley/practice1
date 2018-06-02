@@ -10,6 +10,6 @@ public interface UserService {
     void create(UserDto user);
     List<UserDto> findAll();
     void delete(Long id);
-    void update(Long id, User user);
+    void update(Long id, UserDto user);
     User get(Long id);
 }

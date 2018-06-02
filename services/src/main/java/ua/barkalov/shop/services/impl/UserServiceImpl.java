@@ -33,14 +33,17 @@ public class UserServiceImpl implements UserService {
 
     //    smth like this, I guess so
     @Override
+    @Transactional
     public void delete(Long id) {
         userDao.delete(id);
     }
 
     //    smth like this, I guess so
     @Override
-    public void update(Long id, User user) {
-        userDao.update(id,user);
+    @Transactional
+    public void update(Long id, UserDto user) {
+        User entity = userConverter.toEntity(user);
+        userDao.update(id, entity);
     }
 
     //    smth like this, I guess so

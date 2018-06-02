@@ -12,6 +12,7 @@
         <module>main</module>
         <module>services</module>
         <module>dao</module>
+        <module>web</module>
     </modules>
 
     <properties>
