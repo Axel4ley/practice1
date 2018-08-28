@@ -1,6 +1,7 @@
 package ua.barkalov.shop.DAO.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "USERS")
@@ -20,14 +21,17 @@ public class User {
     @Column(name = "AGE")
     private Integer age;
 
+    @OneToMany
+    private Set<Order> orders;
+
     public User() {
     }
 
-    public User(Long id, String firstName, String lastName, int age) {
-        this.id = id;
+    public User(String firstName, String lastName, Integer age, Set<Order> orders) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        this.orders = orders;
     }
 
     public Long getId() {
@@ -60,6 +64,14 @@ public class User {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
     }
 
     @Override
