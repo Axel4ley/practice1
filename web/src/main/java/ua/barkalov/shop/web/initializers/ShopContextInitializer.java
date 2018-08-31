@@ -1,4 +1,4 @@
-package com.skillsup.web.initializers;
+package ua.barkalov.shop.web.initializers;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.XmlWebApplicationContext;

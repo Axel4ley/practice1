@@ -37,7 +37,7 @@ public class UserDAOTest {
     @Test
     public void testFindById() {
         // given
-        User user = new User(null, "John", "Dowson", 35);
+        User user = new User("John", "Dowson", 35/*, null*/);
         entityManager.persist(user);
 
         // when
@@ -50,7 +50,7 @@ public class UserDAOTest {
     @Test
     public void testDelete() {
         //given
-        User user = new User(null, "John", "Dowson", 35);
+        User user = new User("John", "Dowson", 35 /*null*/);
         entityManager.persist(user);
         Long id = user.getId();
 
@@ -67,9 +67,9 @@ public class UserDAOTest {
     public void testUpdate() {
         //given
 
-        User user = new User(null, "John", "Dowson", 35);
+        User user = new User("John", "Dowson", 35/*, null*/);
         entityManager.persist(user);
-        User newUser = new User(null, "Ivan", "Ivanov", 46);
+        User newUser = new User("Ivan", "Ivanov", 46/*, null*/);
 
         //when
         userDAO.update(user.getId(), newUser);
@@ -83,7 +83,7 @@ public class UserDAOTest {
     @Test
     public void testCreate() {
         //given
-        User user = new User(null, "John", "Dowson", 35);
+        User user = new User("John", "Dowson", 35/*, null*/);
 
         //when
         userDAO.create(user);
@@ -96,8 +96,8 @@ public class UserDAOTest {
     @Test
     public void testFindAll() {
         //given
-        User user1 = new User(null, "John", "Dowson", 35);
-        User user2 = new User(null, "Johnyyy", "Dow", 46);
+        User user1 = new User("John", "Dowson", 35/*, null*/);
+        User user2 = new User("Johnyyy", "Dow", 46/*, null*/);
 
         List<User> expectedUsers = Arrays.asList(user1, user2);
         expectedUsers.forEach(entityManager::persist);

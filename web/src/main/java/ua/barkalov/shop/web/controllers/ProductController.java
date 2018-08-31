@@ -1,4 +1,4 @@
-package com.skillsup.web.controllers;
+package ua.barkalov.shop.web.controllers;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

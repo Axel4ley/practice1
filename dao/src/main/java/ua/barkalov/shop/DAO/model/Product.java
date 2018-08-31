@@ -1,5 +1,7 @@
 package ua.barkalov.shop.DAO.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -35,9 +37,9 @@ public class Product {
     @Column(name = "REMAINING_COUNT", nullable = false)
     private int remainingCount;
 
-    @ManyToMany(targetEntity = Order.class)
+    @JsonIgnore
+    @ManyToMany(mappedBy = "products")
     private Set<Order> orders;
-
 
 
     public void setOrders(Set<Order> orders) {

@@ -13,7 +13,7 @@
     <import resource="classpath:context-services.xml"/>
 
     <context:annotation-config/>
-    <context:component-scan base-package="com.skillsup.web"/>
+    <context:component-scan base-package="ua.barkalov.shop.web"/>
 
     <mvc:annotation-driven/>
     <mvc:default-servlet-handler/>

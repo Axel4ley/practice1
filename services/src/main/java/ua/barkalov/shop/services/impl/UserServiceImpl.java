@@ -24,21 +24,19 @@ public class UserServiceImpl implements UserService {
         this.userConverter = userConverter;
     }
 
+    @Override
     @Transactional
     public void create(UserDto user) {
         User userEntity = userConverter.toEntity(user);
         userDao.create(userEntity);
     }
 
-
-    //    smth like this, I guess so
     @Override
     @Transactional
     public void delete(Long id) {
         userDao.delete(id);
     }
 
-    //    smth like this, I guess so
     @Override
     @Transactional
     public void update(Long id, UserDto user) {
@@ -46,12 +44,13 @@ public class UserServiceImpl implements UserService {
         userDao.update(id, entity);
     }
 
-    //    smth like this, I guess so
     @Override
+    @Transactional
     public User get(Long id) {
         return userDao.get(id);
     }
 
+    @Override
     @Transactional(readOnly = true)
     public List<UserDto> findAll() {
         List<User> users = userDao.findAll();
@@ -61,7 +60,6 @@ public class UserServiceImpl implements UserService {
             UserDto dto = userConverter.toDto(user);
             userDtos.add(dto);
         }
-
         return userDtos;
     }
 }

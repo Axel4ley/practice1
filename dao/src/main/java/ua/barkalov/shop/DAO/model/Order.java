@@ -2,8 +2,11 @@ package ua.barkalov.shop.DAO.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "ORDERS")
@@ -15,10 +18,18 @@ public class Order {
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "USER_ID")
+    @JsonManagedReference
     private User user;
 
-    @ManyToMany(targetEntity = Product.class, fetch = FetchType.EAGER)
-    private Set<Product> products;
+    @JsonIgnore
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "ORDERS_PRODUCTS",
+            joinColumns = @JoinColumn(name="ORDER_ID"),
+            inverseJoinColumns = @JoinColumn(name = "PRODUCTS_ID")
+    )
+    private Set<Product> products = new HashSet<>();
 
     @Column(name = "STATUS", nullable = false)
     private String status;

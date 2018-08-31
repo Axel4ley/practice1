@@ -10,14 +10,14 @@ public class ProductConverterImpl implements ProductConverter {
 
     public Product toEntity(ProductDto dto) {
         return new Product(
-                null,
                 dto.getName(),
                 dto.getPrice(),
                 dto.getCategory(),
                 dto.getGender(),
                 dto.getColor(),
                 dto.getSize(),
-                dto.getRemainingCount()
+                dto.getRemainingCount(),
+                dto.getOrders()
         );
     }
 
@@ -29,7 +29,8 @@ public class ProductConverterImpl implements ProductConverter {
                 entity.getGender(),
                 entity.getColor(),
                 entity.getSize(),
-                entity.getRemainingCount()
+                entity.getRemainingCount(),
+                entity.getOrders()
         );
     }
 }

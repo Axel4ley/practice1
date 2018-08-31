@@ -10,11 +10,11 @@ public class UserConverterImpl implements UserConverter {
 
     public User toEntity(UserDto dto) {
         return new User(
-                null,
                 dto.getFirstName(),
                 dto.getLastName(),
                 dto.getAge()
-        );
+//                dto.getOrders()
+                );
     }
 
     public UserDto toDto(User entity) {
@@ -22,6 +22,7 @@ public class UserConverterImpl implements UserConverter {
                 entity.getFirstName(),
                 entity.getLastName(),
                 entity.getAge()
+                /*entity.getOrders()*/
         );
     }
 }

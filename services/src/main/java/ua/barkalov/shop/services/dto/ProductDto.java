@@ -1,7 +1,10 @@
 package ua.barkalov.shop.services.dto;
 
+import ua.barkalov.shop.DAO.model.Order;
+
 import java.math.BigDecimal;
 import java.util.Objects;
+import java.util.Set;
 
 public class ProductDto {
 
@@ -12,11 +15,20 @@ public class ProductDto {
     private String color;
     private String size;
     private int remainingCount;
+    private Set<Order> orders;
 
     public ProductDto() {
     }
 
-    public ProductDto(String name, BigDecimal price, String category, String gender, String color, String size, int remainingCount) {
+    public ProductDto(
+            String name,
+            BigDecimal price,
+            String category,
+            String gender,
+            String color,
+            String size,
+            int remainingCount,
+            Set<Order> orders) {
         this.name = name;
         this.price = price;
         this.category = category;
@@ -24,6 +36,7 @@ public class ProductDto {
         this.color = color;
         this.size = size;
         this.remainingCount = remainingCount;
+        this.orders = orders;
     }
 
     public String getName() {
@@ -80,6 +93,14 @@ public class ProductDto {
 
     public void setRemainingCount(int remainingCount) {
         this.remainingCount = remainingCount;
+    }
+
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
     }
 
     @Override

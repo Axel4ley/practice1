@@ -1,15 +1,14 @@
 package ua.barkalov.shop.DAO.repository.impl;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 import ua.barkalov.shop.DAO.model.User;
 import ua.barkalov.shop.DAO.repository.UserDao;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.HashMap;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import java.util.List;
-import java.util.Map;
 
 @Repository
 public class UserDaoImpl implements UserDao {

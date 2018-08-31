@@ -70,14 +70,10 @@ public class OrderServiceImpl implements OrderService {
         Order order = orderDao.get(id);
         Set<Product> productsInOrder = order.getProducts();
 
-        for(Product product : productsInOrder) {
+        for (Product product: productsInOrder) {
             product.getOrders().remove(order);
             productDao.update(product.getId(), product);
         }
-
-        order.getUser().getOrders().remove(order);
-        userDao.update(order.getUser().getId(), order.getUser());
-
 
         order.setStatus("deleted");
         orderDao.delete(id);

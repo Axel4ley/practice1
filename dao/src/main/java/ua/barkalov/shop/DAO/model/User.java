@@ -1,5 +1,7 @@
 package ua.barkalov.shop.DAO.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -21,17 +23,18 @@ public class User {
     @Column(name = "AGE")
     private Integer age;
 
-    @OneToMany
-    private Set<Order> orders;
+//    @OneToMany(mappedBy = "user")
+//    @JsonBackReference
+//    private Set<Order> orders;
 
     public User() {
     }
 
-    public User(String firstName, String lastName, Integer age, Set<Order> orders) {
+    public User(String firstName, String lastName, Integer age /*Set<Order> orders*/) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        this.orders = orders;
+//        this.orders = orders;
     }
 
     public Long getId() {
@@ -66,13 +69,13 @@ public class User {
         this.age = age;
     }
 
-    public Set<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(Set<Order> orders) {
-        this.orders = orders;
-    }
+//    public Set<Order> getOrders() {
+//        return orders;
+//    }
+//
+//    public void setOrders(Set<Order> orders) {
+//        this.orders = orders;
+//    }
 
     @Override
     public String toString() {
