@@ -2,6 +2,7 @@ package ua.barkalov.shop.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ua.barkalov.shop.DAO.model.Product;
 import ua.barkalov.shop.DAO.repository.ProductDao;
 import ua.barkalov.shop.services.ProductService;
@@ -24,13 +25,16 @@ public class ProductServiceImpl implements ProductService {
     }
 
 
+    @Override
+    @Transactional
     public void create(ProductDto product) {
         Product productEntity = productConverter.toEntity(product);
         productDao.create(productEntity);
     }
 
 
-
+    @Override
+    @Transactional
     public List<ProductDto> findAll() {
 
         List<Product> products = productDao.getAll();

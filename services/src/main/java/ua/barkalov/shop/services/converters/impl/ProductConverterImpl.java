@@ -16,8 +16,7 @@ public class ProductConverterImpl implements ProductConverter {
                 dto.getGender(),
                 dto.getColor(),
                 dto.getSize(),
-                dto.getRemainingCount(),
-                dto.getOrders()
+                dto.getRemainingCount()
         );
     }
 
@@ -29,8 +28,7 @@ public class ProductConverterImpl implements ProductConverter {
                 entity.getGender(),
                 entity.getColor(),
                 entity.getSize(),
-                entity.getRemainingCount(),
-                entity.getOrders()
+                entity.getRemainingCount()
         );
     }
 }

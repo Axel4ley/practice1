@@ -15,7 +15,7 @@ public class ProductDto {
     private String color;
     private String size;
     private int remainingCount;
-    private Set<Order> orders;
+
 
     public ProductDto() {
     }
@@ -27,8 +27,7 @@ public class ProductDto {
             String gender,
             String color,
             String size,
-            int remainingCount,
-            Set<Order> orders) {
+            int remainingCount) {
         this.name = name;
         this.price = price;
         this.category = category;
@@ -36,7 +35,7 @@ public class ProductDto {
         this.color = color;
         this.size = size;
         this.remainingCount = remainingCount;
-        this.orders = orders;
+
     }
 
     public String getName() {
@@ -93,14 +92,6 @@ public class ProductDto {
 
     public void setRemainingCount(int remainingCount) {
         this.remainingCount = remainingCount;
-    }
-
-    public Set<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(Set<Order> orders) {
-        this.orders = orders;
     }
 
     @Override

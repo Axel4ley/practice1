@@ -16,12 +16,12 @@ $(document).ready(function () {
     });
 
     $("#show_products").click(function () {
-        $.getJSON("/products",function(response){
-            var tblHTML ='<tr><th>Product</th><th>Category</th><th>Color</th><th>Cout in warehouse</th>'
+        $.getJSON("/products", function(response) {
+            var tblHTML ='<tr><th>Product</th><th>Category</th><th>Color</th><th>Count in warehouse</th>'
                 + '<th>Price</th><th>Gender</th><th>Size</th></tr>';
-            $.each(response, function(i, item){
+            $.each(response, function(i, item) {
                 tblHTML += '<tr><td>' + item.name + '</td><td>' + item.category + '</td><td>' + item.color
-                    + '</td><td>' + item.count + '</td><td>' + item.price + '</td><td>' + item.gender
+                    + '</td><td>' + item.remainingCount + '</td><td>' + item.price + '</td><td>' + item.gender
                     + '</td><td>' + item.size + '</td></tr>';
             });
 

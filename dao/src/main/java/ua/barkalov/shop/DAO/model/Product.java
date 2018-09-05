@@ -35,16 +35,13 @@ public class Product {
     private String size;
 
     @Column(name = "REMAINING_COUNT", nullable = false)
-    private int remainingCount;
+    private Integer remainingCount;
 
     @JsonIgnore
     @ManyToMany(mappedBy = "products")
     private Set<Order> orders;
 
 
-    public void setOrders(Set<Order> orders) {
-        this.orders = orders;
-    }
 
     public Product() {
     }
@@ -56,8 +53,8 @@ public class Product {
             String gender,
             String color,
             String size,
-            int remainingCount,
-            Set<Order> orders) {
+            int remainingCount
+            ) {
         this.name = name;
         this.price = price;
         this.category = category;
@@ -65,7 +62,6 @@ public class Product {
         this.color = color;
         this.size = size;
         this.remainingCount = remainingCount;
-        this.orders = orders;
     }
 
     public Long getId() {
@@ -135,6 +131,11 @@ public class Product {
     public Set<Order> getOrders() {
         return orders;
     }
+
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
+    }
+
 
     @Override
     public boolean equals(Object o) {

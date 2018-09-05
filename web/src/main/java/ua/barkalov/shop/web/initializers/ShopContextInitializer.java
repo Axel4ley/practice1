@@ -15,7 +15,8 @@ public class ShopContextInitializer implements WebApplicationInitializer {
         XmlWebApplicationContext context = new XmlWebApplicationContext();
         context.setConfigLocation("/WEB-INF/spring/context-web.xml");
 
-        ServletRegistration.Dynamic dispatcher = servletContext.addServlet("dispatcher", new DispatcherServlet(context));
+        ServletRegistration.Dynamic dispatcher =
+                servletContext.addServlet("dispatcher", new DispatcherServlet(context));
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/*");
     }
